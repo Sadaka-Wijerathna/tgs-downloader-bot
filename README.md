@@ -1,75 +1,74 @@
 <p style="text-align:center;" align="center">
   <img align="center" src="./assets/logo.png" alt="TGS Downloader Bot" width="320px" height="320px"/>
 </p>
-<h1 align="center">📦 TGS Downloader Bot</h1>
+<h1 align="center">📦 TGS Emoji Downloader Bot</h1>
 
 <div align="center">
 
-[![Telegram](https://img.shields.io/badge/Telegram-Demo-01CC1D?logo=telegram&style=flat)](https://t.me/tgs_emoji_downloader_bot)
-[![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg?logo=python&style=flat)](https://www.python.org/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&style=flat)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Telegram](https://img.shields.io/badge/Telegram-Bot-01CC1D?logo=telegram&style=flat)](https://t.me/SadadakaWijerathna)
 
 </div>
 
-<h4 align="center">Download Animated Stickers & Premium Custom Emojis as <code>.tgs</code> files 📥</h4>
+<h4 align="center">Download Animated Stickers & Custom Emojis in TGS Format! 🚀✨</h4>
 
 <div align="center">
-  - A Telegram bot that converts animated stickers / custom emojis to <b>.tgs</b> and can download entire packs as a <b>ZIP</b>. -
+  - High-performance Telegram bot to convert animated content into downloadable TGS files -
   <br/>
-  <sup><sub>Fast downloads • Progress updates • Auto-cleanup • History tracking</sub></sup>
+  <sup><sub>Built with Python and python-telegram-bot ツ</sub></sup>
 </div>
 
 ## 🎯 Features
 
-- 🎭 **Animated Sticker → .tgs** — send an animated sticker and get the `.tgs` file back
-- 😎 **Premium Custom Emoji → .tgs** — supports Telegram custom emoji entities (`custom_emoji`)
-- 🔗 **Pack URL Detection** — paste `t.me/addstickers/<pack>` or `t.me/addemoji/<pack>`
-- 📦 **Pack → ZIP** — downloads all animated items in the pack and returns a ZIP
-- 📊 **Progress + ETA** — live progress bar while downloading packs
-- 🧵 **Parallel Downloads** — controlled concurrency for faster pack downloads
-- 🧹 **Auto Cleanup** — periodically removes old files from `downloads/`
-- 🕘 **Download History** — `/history` shows recent downloads and lets users clear entries
-- 🛡️ **Retry on Network Errors** — retries on `NetworkError` / `TimedOut` with backoff
-
-## 🎬 Demo
-
-> Add your own demo GIF/screenshot here (optional)
-
-```text
-1) Send an animated sticker ➜ bot replies with .tgs
-2) Send a pack link ➜ tap Download ➜ receive ZIP
-```
+- 🖼️ **Single Sticker Conversion** - Instantly convert any animated sticker to a `.tgs` file.
+- 🌟 **Custom Emoji Support** - Download premium animated custom emojis as `.tgs`.
+- 📦 **Bulk Pack Download** - Download entire emoji or sticker packs as a single ZIP archive.
+- 📊 **Real-time Progress** - Visual progress bars and ETA for large pack downloads.
+- 🗜️ **Optimized Packaging** - Efficient ZIP compression and file naming.
+- 💾 **Disk Management** - Smart cleanup of old files and disk space monitoring.
+- ☁️ **Cloud Ready** - Easy deployment to Railway, Heroku, and generic VPS.
 
 ## 🚀 Quick Start
 
-### Option 1: Local Development
+### Prerequisites
+
+- Python 3.10+
+- Telegram Bot Token (from [@BotFather](https://t.me/BotFather))
+
+### Option 1: Local Setup
 
 ```bash
-# Clone
-# git clone <your-repo-url>
-cd "tgs downloader"
+# Clone the repository
+git clone https://github.com/Sadaka-Wijerathna/tgs-downloader-bot.git
+cd tgs-downloader-bot
 
 # Install dependencies
 pip install -r requirements.txt
 
 # Configure environment
 cp .env.example .env
-# Edit .env and set TELEGRAM_BOT_TOKEN
+# Edit .env and add your TELEGRAM_BOT_TOKEN
+```
 
-# Run
+### Option 2: Running the Bot
+
+```bash
 python bot.py
 ```
 
-### Option 2: Deploy to Cloud (Heroku/Render style)
+## ☁️ Deploy to Cloud
 
-This repo already includes:
-- `Procfile`
-- `runtime.txt`
+### 🚀 One-Click Deploy
 
-Set the environment variable:
-- `TELEGRAM_BOT_TOKEN`
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/nixpacks?referrer=https://github.com/Sadaka-Wijerathna/tgs-downloader-bot)
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://www.heroku.com/deploy?template=https://github.com/Sadaka-Wijerathna/tgs-downloader-bot)
 
-Then deploy and run the worker.
+### 🔨 Manual Deployment (Generic VPS)
+
+1. Clone the repo and install dependencies (as shown in Quick Start).
+2. Set up a process manager like **PM2** or a **Systemd** service to keep the bot running.
+3. Ensure the `downloads/` directory has write permissions.
 
 ---
 
@@ -77,86 +76,74 @@ Then deploy and run the worker.
 
 ### Environment Variables
 
-| Variable | Required | Description | Default |
-|----------|----------|-------------|---------|
-| `TELEGRAM_BOT_TOKEN` | ✅ Yes | Telegram bot token from [@BotFather](https://t.me/BotFather) | - |
-
-### Useful Settings (config.py)
-
-| Setting | Description | Default |
-|---|---|---|
-| `DOWNLOADS_DIR` | Folder used for temporary downloads | `downloads` |
-| `MAX_CONCURRENT_DOWNLOADS` | Max parallel sticker downloads when fetching packs | `5` |
-| `CLEANUP_AGE_HOURS` | Remove downloads older than N hours | `1` |
-| `CLEANUP_INTERVAL_HOURS` | Run cleanup job every N hours | `6` |
-| `MIN_FREE_SPACE_MB` | Minimum required free space before pack downloads | `100` |
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `TELEGRAM_BOT_TOKEN` | ✅ Yes | Your bot token from [@BotFather](https://t.me/BotFather) |
+| `DOWNLOADS_DIR` | ❌ No | Directory where files are stored (default: `downloads`) |
+| `CLEANUP_AGE_HOURS` | ❌ No | Automatic deletion threshold (default: `1 hour`) |
 
 ---
 
 ## 📖 Usage
 
-### In Private Chat
+### Private Chat
 
-**Download a single animated sticker**
-1. Send an **animated** sticker
-2. The bot replies with a `.tgs` file
+1. **Send an animated sticker** to get the TGS file instantly.
+2. **Send an animated custom emoji** to get its TGS file.
+3. **Send a pack URL** to download the whole pack:
+   - `t.me/addemoji/PackName`
+   - `t.me/addstickers/PackName`
 
-**Download a premium custom emoji**
-1. Send a message containing premium custom emojis
-2. The bot detects `custom_emoji` entities and replies with `.tgs`
+### Bot Commands
 
-**Download a pack**
-1. Send a pack URL:
-   - `https://t.me/addstickers/<pack_name>`
-   - `https://t.me/addemoji/<pack_name>`
-2. Tap **Download**
-3. Receive the ZIP containing all animated items
-
-### All Commands
-
-- `/start` — Start the bot + buttons
-- `/help` — Usage instructions
-- `/about` — About
-- `/history` — Recent downloads
+- `/start` - Welcome message & feature overview
+- `/help` - In-depth guide on how to use the bot
+- `/about` - Technical details and developer info
+- `/history` - View your recent bulk download history
 
 ---
 
-## 🛠 Tech Stack
+## 🔬 How Does It Work?
 
-- **Language**: Python
+1. **Fetch**: The bot uses the Telegram API to retrieve the file path for animated stickers/emojis.
+2. **Download**: Content is fetched as `.tgs` (Gzipped JSON).
+3. **Process**: 
+   - For single files, it renames and delivers them.
+   - For packs, it fetches all stickers in parallel using `asyncio.Semaphore` to stay within API limits.
+4. **Deliver**: Files are zipped and sent to the user, with temporary storage automatically cleaned up.
+
+## 🛠️ Tech Stack
+
+- **Language**: Python 3.10+
 - **Framework**: [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot)
-- **Config**: `python-dotenv`
+- **Concurrency**: `asyncio` for parallel downloads
+- **Storage**: JSON-based history management
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome!
+Contributions are what make the open-source community such an amazing place!
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
 ---
 
 ## 📝 License
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
-
----
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 👨‍💻 Developer
 
-**Your Name**
-- 🐦 Telegram: [@YourUsername](https://t.me/YourUsername)
-- 🌐 GitHub: https://github.com/yourname
+**Sadadaka Wijerathna**
+- 🐦 Telegram: [@SadadakaWijerathna](https://t.me/SadadakaWijerathna)
+
+---
 
 <div align="center">
-
-**If you find this project useful, please consider giving it a ⭐!**
-
-[🚀 Try the Bot](https://t.me/tgs_emoji_downloader_bot)
-
+  <b>If you find this project useful, please consider giving it a ⭐!</b>
 </div>
