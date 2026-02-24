@@ -32,11 +32,9 @@
 
 ## 🎬 Demo
 
-<div align="center">
-  <img src="./assets/logo.png" alt="TGS Downloader Demo" width="320px" style="border-radius: 15px; box-shadow: 0 8px 16px rgba(0,0,0,0.15);"/>
+  <img src="./assets/demo.gif" alt="TGS Downloader Demo" width="320px" style="border-radius: 15px; box-shadow: 0 8px 16px rgba(0,0,0,0.15);"/>
   <br/>
   <sup><i>(Tip: Send any animated sticker to the bot to see it in action!)</i></sup>
-</div>
 
 ## 🚀 Quick Start
 
@@ -191,5 +189,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [🚀 Try the Bot](https://t.me/SadadakaWijerathna) • [⭐ Star on GitHub](https://github.com/Sadaka-Wijerathna/tgs-downloader-bot)
 
 </div>
+
 
 
