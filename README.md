@@ -1,5 +1,5 @@
 <p style="text-align:center;" align="center">
-  <img align="center" src="./assets/logo.png" alt="TGS Downloader Bot" width="320px" height="320px"/>
+  <img align="center" src="./assets/logo1.png" alt="TGS Downloader Bot" width="320px" height="320px"/>
 </p>
 <h1 align="center">📦 TGS Emoji Downloader Bot</h1>
 
@@ -191,3 +191,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [🚀 Try the Bot](https://t.me/SadadakaWijerathna) • [⭐ Star on GitHub](https://github.com/Sadaka-Wijerathna/tgs-downloader-bot)
 
 </div>
+
